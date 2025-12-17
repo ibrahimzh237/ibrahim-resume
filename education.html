@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education | Ibrahim Zaharin</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
             </a>
             <ul>
                 <li><a href="biodata.html">Biodata</a></li>
-                <li><a href="experience.html">Experience</a></li> 
+                <li><a href="experience.html">Experience</a></li>
                 <li><a href="education.html" class="active-nav-link">Education</a></li>
                 <li><a href="family.html">Family</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -40,8 +40,8 @@
                 <div class="date-tag">
                     <span class="year-text">2023 – Present</span>
                     <div class="institution-visuals">
-                         <img src="ulogo.png" alt="UiTM Logo" class="institution-logo">
-                        </div>
+                       <img src="ulogo.png" alt="UiTM Logo" class="institution-logo">
+                    </div>
                 </div>
                 
                 <div class="scroll-marker"></div>
@@ -49,7 +49,7 @@
                 <div class="scroll-content">
                     <h2 class="scroll-title">Diploma In Information Management</h2>
                     <p class="institution-name">Universiti Teknologi MARA (UiTM)</p>
-                    <p class="scroll-summary">Pursuing Diploma in Information Management, focused on IT systems, data management, and software development, equipping students with practical skills to design, implement  and manage efficient information systems.</p>
+                    <p class="scroll-summary">Pursuing Diploma in Information Management, focused on IT systems, data management, and software development, equipping students with practical skills to design, implement and manage efficient information systems.</p>
 
                     <div class="scroll-achievements">
                         <span class="achievement-item highlight">
@@ -117,16 +117,70 @@
             </div>
             
         </section>
-
         
+        <section class="certificates-section">
+            <h2 class="certificates-headline">Key Certifications & Awards</h2>
+            
+            <table class="certificate-table">
+                <thead>
+                    <tr>
+                        <th class="col-number">#</th>
+                        <th class="col-title">Certificate Title</th>
+                        <th class="col-issuer">Issuing Body</th>
+                        <th class="col-year">Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-number">1</td>
+                        <td class="col-title">Deans Award</td>
+                        <td class="col-issuer">Diploma in Information Management</td>
+                        <td class="col-year">2025</td>
+                    </tr>
+                    <tr>
+                        <td class="col-number">2</td>
+                        <td class="col-title">Kursus Baik Pulih Komputer (Siri 1)</td>
+                        <td class="col-issuer">Unit Pembelajaran Sepanjang Hayat</td>
+                        <td class="col-year">2023</td>
+                    </tr>
+                    <td class="col-number">3</td>
+                        <td class="col-title">AWS Sales Accreditation</td>
+                        <td class="col-issuer">AWS Partner</td>
+                        <td class="col-year">2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
         
     </main>
 
     <footer>
         <p>&copy; 2025 Ibrahim Zaharin. All rights reserved. | Statement of Responsibility/Ownership.</p>
+        
+        <span id="creation-date" data-date="Nov 10, 2025"></span>
+        <span id="last-updated" data-date="Dec 17, 2025"></span>
     </footer>
 
     <script>
+        // --- Website Creation Date Display Logic ---
+        function displayCreationDate() {
+            const createdElement = document.getElementById('creation-date');
+            if (createdElement) {
+                const date = createdElement.getAttribute('data-date'); 
+                createdElement.textContent = `Created: ${date}`;
+            }
+        }
+        
+        // --- Last Updated Display Logic ---
+        function displayLastUpdated() {
+            const updatedElement = document.getElementById('last-updated');
+            if (updatedElement) {
+                const date = updatedElement.getAttribute('data-date');
+                updatedElement.textContent = `Last Updated: ${date}`;
+            }
+        }
+        
+        // --- Current Date/Time Function ---
         function updateDateTime() {
             const now = new Date();
             const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
@@ -141,6 +195,9 @@
             }
         }
         
+        // --- Initialization ---
+        displayCreationDate();
+        displayLastUpdated();
         updateDateTime();
         setInterval(updateDateTime, 1000); 
     </script>
